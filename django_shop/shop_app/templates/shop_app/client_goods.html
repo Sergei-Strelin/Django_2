@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ title }} | {{ block.super }}{% endblock %}
+
+{% block main %}
+    <input type="text">
+    <li><a href="{{ text }}/3">http://127.0.0.1:8000/get_client_goods/3</a></li>
+    <p> Имя клиента: {{ client.name }} </p>
+    {% if orders %}
+    <h3>Заказы за последние {{ count_days }} дней</h3>
+        {% for order in orders %}
+            <p>Товар: {{ order.goods_id.name }}<br>
+                Описание: {{ order.goods_id.description }}<br>
+                Дата создания: {{ order.create_at }}</p>
+        {% endfor %}
+    {% else %}
+        <p>Клиент пока ничего не заказал</p>
+    {% endif %}
+{% endblock %}

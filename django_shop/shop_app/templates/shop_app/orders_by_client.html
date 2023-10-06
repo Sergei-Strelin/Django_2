@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Каталог | {{ block.super }}{% endblock %}
+{% block h1 %}
+    Все заказы клиента {{ client.name | capfirst }}:
+{% endblock h1 %}
+{% block content %}
+    <div>
+        <ul>
+            {% for order in orders %}
+                <li>
+                    <a href="{% url 'order_full' order.pk %}" target="_blank">Заказ номер {{ order.pk }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <h3>Все товары заказанные клиентом:</h3>
+        <ul>
+            {% for good in goods %}
+                <li>
+                    <b><a href="{% url 'good_full' good.pk %}" target="_blank">{{ good.title }}</a>, Date: {{ good.pk }}
+                    </b>
+                </li>
+            {% empty %}
+                <i>заказанные товары отсутствуют</i>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}

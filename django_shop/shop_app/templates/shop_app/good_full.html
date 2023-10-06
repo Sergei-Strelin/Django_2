@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Каталог | {{ block.super }}{% endblock %}
+{% block h1 %}
+    Товар <b>{{ good.title }}</b>:
+{% endblock h1 %}
+{% block content %}
+    {% for attr, value in good.all_fields.items %}
+        {% if value %}
+            {% if attr == 'image' %}
+                <p><b>{{ attr }}: </b><img src="{{ value.url }}" alt="{{ good.title }}  height=" 150"></p>
+            {% else %}
+                <p><b>{{ attr }}: </b>{{ value }}</p>
+            {% endif %}
+        {% else %}
+            <p><b>{{ attr }}: </b>None</p>
+        {% endif %}
+    {% endfor %}
+    <a href="{% url 'edit_good' good.pk %}">
+        <button>EDIT this good</button>
+    </a>
+{% endblock content %}

@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;*/
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    flex-direction: column;
+    min-height: 90vh;
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    background: gainsboro;
+}
+
+.navbar ul li {
+    display: inline;
+    justify-content: space-between;
+    margin: 15px 0;
+    padding: 5px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px ;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: lightgoldenrodyellow;
+    margin: 0 15px ;
+    color: #fff;
+    height: auto;
+}
+
+.nav {
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    width: 100%;
+}
+
+header {
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    color: #000;
+    background-color: lightgoldenrodyellow;
+    flex-direction: column;
+}
+.container {
+	width: 1366px;
+	margin: 0 auto;
+	min-height: 100%;
+}
+
+.main {
+    margin: 10px;
+    padding: 1px;
+    min-height: 100vh;
+    position: relative;
+}
+.container
+{
+    position: relative;
+    width: 1400px;
+    min-height: 85vh;
+    /*border-radius: 70px 5px;*/
+    /*background: #1c1c1c;*/
+    overflow: hidden;
+}
+
+footer {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: blue;
+}
+
+.footer {
+    height: 40px;
+    display: flex;
+    position: absolute;
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    background-color: lightgoldenrodyellow;
+}
+
+a[href^='mailto']::before {
+    content: '📧 ';
+}
+
+a[href^='tel']::before {
+    content: '📞 ';
+}

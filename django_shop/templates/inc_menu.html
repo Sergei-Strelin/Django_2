@@ -1,0 +1,22 @@
+{% with request.resolver_match.url_name as url_name %}
+    <ul>
+        <li><a href="{% url 'shop_app:main' %}" class="{% if url_name == 'home' %}active{% endif %}">
+            Главная
+        </a></li>
+        <li><a href="{% url 'shop_app:test' %}" class="{% if url_name == 'test' %}active{% endif %}">
+            Тест
+        </a></li>
+        <li><a href="{% url 'shop_app:client_goods' %}" class="{% if url_name == 'client_goods' %}active{% endif %}">
+            client_goods
+        </a></li>
+        <li><a href="{% url 'shop_app:get_catalog' %}" class="{% if url_name == 'get_catalog' %}active{% endif %}">
+            Каталог
+        </a></li>
+        <li><a href="{% url 'shop_app:contacts' %}" class="{% if url_name == 'contacts' %}active{% endif %}">
+            Контакты
+        </a></li>
+        <li><a href='/admin/' class="{% if url_name == 'admin' %}active{% endif %}">
+            Административный сайт
+        </a></li>
+    </ul>
+{% endwith %}

@@ -1,0 +1,71 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        {% block title %}
+            Электронный магазин
+        {% endblock %}
+    </title>
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
+    {% endblock %}
+</head>
+<body>
+<header class="header">
+    {% block header %}
+
+        <div class="navbar">
+            <nav class="nav">
+                {% now "l d M Y" %}
+                {% include 'inc_menu.html' %}
+            </nav>
+        </div>
+
+    {% endblock %}
+</header>
+<div class="main container">
+
+    {% block main %}
+
+        <h1>Главная страница</h1>
+        <p class="pub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias numquam ipsum enim, neque
+            nulla
+            rerum voluptatum temporibus a! Enim veritatis, odio quasi molestiae rerum repellat dolore illo. Distinctio,
+            praesentium maxime?</p>
+        <h2>Добро пожаловать на сайт</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam voluptatibus, accusamus expedita voluptate
+            illo,
+            sint minus optio consectetur possimus, repellendus laborum eum voluptatum qui porro praesentium voluptatem
+            cupiditate dolore ut?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus delectus ut quod mollitia tempora est
+            atque
+            dicta ipsum deleniti magnam quisquam, rem commodi cumque, perspiciatis rerum recusandae sit debitis
+            dolorum!</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur repudiandae voluptatibus quisquam
+            excepturi, aliquid dicta eius, voluptate alias recusandae maxime reiciendis reprehenderit nisi? Sed
+            doloremque
+            ullam cupiditate adipisci dignissimos ab?</p>
+
+    {% endblock %}
+</div>
+<footer class="footer">
+    {% block footer %}
+
+        <small>
+            <address>
+                <a href="mailto:admin@strelin.of.by">admin@strelin.of.by</a>
+                <a href="tel:+372955552368">+375(29) 555-2368</a>
+            </address>
+            &copy; Strelin
+            {% now "Y" %}
+        </small>
+
+    {% endblock %}
+</footer>
+</body>
+</html>
